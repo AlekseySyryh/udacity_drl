@@ -15,10 +15,12 @@ class QNetwork(nn.Module):
             fc2_units (int): Number of nodes in second hidden layer
         """
         super(QNetwork, self).__init__()
-        self.fc1 = nn.Linear(state_size, state_size*2)
-        self.fc2 = nn.Linear(state_size*2, action_size)
+        self.fc1 = nn.Linear(state_size, 256)
+        self.fc2 = nn.Linear(256, 256)
+        self.fc3 = nn.Linear(256, action_size)
 
     def forward(self, state):
         """Build a network that maps state -> action values."""
         x = F.relu(self.fc1(state))
-        return self.fc2(x)
+        x = F.relu(self.fc2(x))
+        return self.fc3(x)
