@@ -27,13 +27,13 @@ class ReplayBuffer:
     def sample(self):
         """Randomly sample a batch of experiences from memory."""
         experiences = random.sample(self.memory, k=self.batch_size)
-
+        #the code is slightly changed from the original
+        #Buffer should not now about PyTorch (it is not its responsibility), so we just return numpy arrays
         states = np.vstack([e.state for e in experiences if e is not None])
         actions = np.vstack([e.action for e in experiences if e is not None])
         rewards = np.vstack([e.reward for e in experiences if e is not None])
         next_states = np.vstack([e.next_state for e in experiences if e is not None])
         dones = np.vstack([e.done for e in experiences if e is not None]).astype(np.uint8)
-  
         return (states, actions, rewards, next_states, dones)
 
     def __len__(self):
