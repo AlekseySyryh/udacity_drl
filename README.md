@@ -26,7 +26,6 @@ The environment is considered solved, when the average (over 100 episodes) of th
 ### Getting Started
 
 1. Create (and activate) a new environment with Python 3.6.
-
 	- __Linux__ or __Mac__: 
 	```bash
 	conda create --name drlnd python=3.6
@@ -37,11 +36,9 @@ The environment is considered solved, when the average (over 100 episodes) of th
 	conda create --name drlnd python=3.6 
 	activate drlnd
 	```
-	
 1. Follow the instructions in [this repository](https://github.com/openai/gym) to perform a minimal install of OpenAI gym.  
 	- Next, install the **classic control** environment group by following the instructions [here](https://github.com/openai/gym#classic-control).
 	- Then, install the **box2d** environment group by following the instructions [here](https://github.com/openai/gym#box2d).
-	
 1. Clone the repository (if you haven't already!), and navigate to the `python/` folder.  Then, install several dependencies.
 ```bash
 git clone https://github.com/udacity/deep-reinforcement-learning.git
@@ -63,13 +60,21 @@ python -m ipykernel install --user --name drlnd --display-name "drlnd"
 ### Files
  
 checkpoints/\* - models saved during training. can be used to evaluate the learning process in more detail.
+
 Report.ipynb - project report notebook
+
 Tennis.ipynb - training notebook
+
 ReplayBuffer.py - replay buffer implementation
+
 network.py - networks implementation
+
 agent.py - agent implementation
+
 README.md - this file
+
 \*.final.pth - trained models
+
 scores.pkl - scores collected during training process
 
 ### Instructions
