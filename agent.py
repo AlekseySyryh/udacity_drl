@@ -57,7 +57,6 @@ class Agent():
 
     def step(self, states, actions, rewards, next_states, dones):
         """Save experience in replay memory, and use random sample from buffer to learn."""
-        #for a in range(self.num_agents):
         self.memory.add(states, actions, rewards, next_states, dones)
 
         if len(self.memory) > BATCH_SIZE:
@@ -76,7 +75,9 @@ class Agent():
             actions += self.noise.sample()
  
         return np.clip(actions, -1, 1)
+
     def reset(self):
+        """Noise reset."""
         self.noise.reset()
         self.i_step=0
 
